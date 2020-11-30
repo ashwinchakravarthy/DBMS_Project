@@ -1,0 +1,44 @@
+{% extends './base.html'%}
+{%block content%}
+<title>
+    VIEW VOLUNTEERS
+</title>
+<a href="{%url 'register'%}">SUBMIT ENTRY AGAIN</a>
+<table class="table_style">
+    <tr>
+    <th>ID</th>
+    <th>NAME</th>
+    <th>BRANCH NAME</th>
+    </tr>
+    {% for field_val in object%}
+    
+    <tr>
+    <td><h3>{{field_val.vol_id}}</h3></td>
+    <td><h3>{{field_val.vol_name}}</h3></td> 
+    <td><h3>
+        {%for branchname in field_val.branch.all%}
+        {{branchname}} <br/>
+        {% endfor %}
+    </h3>
+        
+    </td> 
+    </tr>
+    <br/>
+    {% endfor%}
+  
+</table>
+
+
+<style>
+    .table_style,th,td{
+        width: 50%;
+        border: 1px solid black;
+        text-align: center;
+        
+    }
+    body{
+        background-color:lightgray;
+        
+    }
+</style>
+{%endblock%}

@@ -1,0 +1,14 @@
+{%extends './base.html'%}
+{%block content%}
+
+
+{{id}}
+<h1>Total Fee Collected For Event:{{fee}}</h1>
+
+{%for student in studentlist%}
+<h3>STUDENT: {{student.stud_name}}</h3>
+<h3>USN: {{student.stud_USN}}</h3>
+<h3>COLLEGE: {{student.stud_college}}</h3>
+<hr/>
+{%endfor%}
+{%endblock%}

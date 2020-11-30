@@ -1,0 +1,23 @@
+{%extends './base.html'%}
+{%block content%}
+{{id}}
+
+<form method="POST">{%csrf_token%}
+    {{form.as_p}}
+<input type="submit" value="submit" onclick='success()'>
+
+
+</form>
+<script>
+     var x=document.getElementById('id_stud_name');
+    console.log(x.value)
+function success(){
+   
+    if (x.value!==''){
+        window.alert("Registered Succesfully!")
+    }
+    
+}
+
+</script>
+{%endblock%}

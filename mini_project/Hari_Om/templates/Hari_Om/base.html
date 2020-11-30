@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head> <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script></head>
+    <style>
+    ul {
+        
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color:orange;
+      }
+      
+      li {
+        float: left;
+        border-right:1px, solid black;
+      }
+      
+      li a {
+        display: block;
+        color:black;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+      
+      li a:hover {
+        background-color:green;
+      }
+     
+      </style>
+<body>   
+    <ul>
+        <li> <a href="{%url 'index'%}">HOME</a> </li>
+        <li> <a href="{%url 'register'%}">REGISTER</a> </li>
+        <li> <a href="{}">QUERY</a> </li>
+        <li> <a href="{%url 'table'%}">TABLE</a> </li>
+        
+    </ul>
+    {% block content %}
+    replace this
+    {% endblock %}
+</body>
+</html>

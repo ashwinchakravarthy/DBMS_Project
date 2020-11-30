@@ -1,0 +1,56 @@
+{%extends './base.html'%}
+{%block content%}
+<h3>Government Sri Krishnarajendra Silver Jubilee Technological Institute Bangalore</h3>
+<br/>
+<h1>IMPULSE 20-21</h1>
+<br/>
+
+
+    {% if user.is_authenticated %}
+
+    <h2>Welcome {{user.username}}</h2>
+
+    <h2>Total Fee collected: {{total}}</h2>
+    
+    {%endif%}
+
+
+    
+    
+    
+
+   
+    <div class="cont">
+
+
+    {%for event in e_list%}
+    {%if event.id != 5 %}
+    
+    <div class="card">
+
+        {{event.id}}
+        <h3>{{event.event_name}}</h3>
+        <small>{{event.event_date_time}}</small>
+        <p>{{event.event_description}}</p>
+        <h5>Price Money:{{event.event_price}}</h5>
+        <h5>Event FEE:{{event.event_fee}}</h5>
+        <h5>Max Participants:{{event.event_maxteams}}</h5>
+        <h5>{{event.event_location}}</h5>
+        <a href="http://127.0.0.1:8000/register/{{event.id}}"><button class='btn btn-primary'>REGISTER NOW</button>  </a>
+        <br/>
+        {% if user.is_authenticated %}
+        <a href="http://127.0.0.1:8000/visitor/{{event.id}}"><button class='btn btn-success'>VIEW PARTICIPANTS</button>  </a>
+        <br/>
+        <a href="http://127.0.0.1:8000/update/{{event.id}}"><button class='btn btn-success'>Update Event</button>  </a>
+        <br/>
+        <a href="http://127.0.0.1:8000/delete/{{event.id}}"><button class='btn btn-danger'>Delete Event</button>  </a>
+        <br/>
+        {%endif%}
+
+      
+        
+    </div>
+    {%endif%}
+    {%endfor%}
+</div>
+{%endblock%}
