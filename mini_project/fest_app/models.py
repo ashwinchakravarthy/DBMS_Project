@@ -17,7 +17,7 @@ class Event(models.Model):
     event_name = models.CharField(max_length=20)
     event_date_time = models.DateTimeField(blank=True)
     event_description = models.TextField(max_length=1000)
-    event_price = models.IntegerField()
+    event_prize = models.IntegerField()
     event_fee = models.IntegerField()
     event_maxteams = models.IntegerField()
     event_location = models.ForeignKey(
