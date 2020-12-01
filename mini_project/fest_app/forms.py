@@ -23,7 +23,7 @@ class EventForm(forms.ModelForm):
         widgets = {'event_date_time': DateInput}
         model = Event
 
-        fields = ['event_name', 'event_date_time',  'event_description', 'event_price',
+        fields = ['event_name', 'event_date_time',  'event_description', 'event_prize',
                   'event_fee', 'event_maxteams', 'event_location']
 
 
