@@ -1,0 +1,30 @@
+{%extends './base.html'%}
+{%block content%}
+
+
+
+
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        
+        <th scope="col">Event List</th>
+        <th scope="col">Description</th>
+      
+      </tr>
+    </thead>
+
+    <tbody>
+        {%for events in list%}
+      <tr>
+        
+        <td>{{events.event_name}}</td>
+        <td>{{events.event_description}}</td>
+        
+      </tr>
+      
+      
+    </tbody>
+  </table>
+
+{%endblock%}
