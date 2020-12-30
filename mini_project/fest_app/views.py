@@ -78,6 +78,11 @@ def DeleteEvent(request, id, *args, **kwargs):
     return redirect('home')
 
 
+def EventListView(request):
+    queryset = eventlist.objects.all().exclude(id=1)
+    return render(request, 'fest_app/list.html', {'list': queryset})
+
+
 @login_required(login_url='/accounts/login/')
 def Visitor(request, id, *args, **kwargs):
     queryset = Student.objects.filter(stud_part_events=id)
