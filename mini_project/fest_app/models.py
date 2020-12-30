@@ -27,6 +27,16 @@ class Event(models.Model):
         return self.event_name
 
 
+class EventList(models.Model):
+    id = models.BigIntegerField()
+    event_name = models.CharField(max_length=20)
+    event_description = models.TextField(max_length=1000)
+
+    class Meta:
+        managed = False
+        db_table = fest_app_eventlist
+
+
 class Student(models.Model):
     stud_name = models.CharField(max_length=20)
     stud_email = models.EmailField()
