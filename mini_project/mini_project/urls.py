@@ -27,7 +27,9 @@ urlpatterns = [
     path('jury/', views.CreateJury, name='jury'),
     path('visitor/<int:id>/', views.Visitor, name='visitor'),
     path('update/<int:id>/', views.Update, name='update'),
-    path('delete/<int:id>/', views.DeleteEvent, name='delete')
+    path('delete/<int:id>/', views.DeleteEvent, name='delete'),
+    path('list/', views.EventList, name='event_list')
+
 
     # path('register/', views.vol_form, name="register"),
     # path('table/', views.display_table, name="table")
